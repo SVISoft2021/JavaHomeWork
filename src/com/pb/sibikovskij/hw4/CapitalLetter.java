@@ -10,7 +10,7 @@ public class CapitalLetter {
         String[] LowTXTNew = LowTXT.split(" ");
         String TXtNew;
 
-        // capitalize each word
+        // разберем каждое слово отдельно
         for (int i = 0; i < LowTXTNew.length; i++) {
             // учтем момен, если слово будет одной буквой
             if (LowTXTNew[i].length() > 1) {
