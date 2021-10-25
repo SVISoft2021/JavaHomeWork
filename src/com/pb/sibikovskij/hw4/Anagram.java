@@ -15,11 +15,11 @@ public class Anagram {
 
         for (int i = 0; i < TxtN2.length(); i++) {
                 if (TxtN1.toUpperCase().indexOf(TxtN2.toUpperCase().charAt(i)) > 0) {
-                    YN = YN + "Y";
+                    YN += "Y";
                     //System.out.println("Буква [" + i + "] = " + TxtN2.charAt(i) + " - Y");
                 }
                 if (TxtN1.toUpperCase().indexOf(TxtN2.toUpperCase().charAt(i)) < 0) {
-                    YN = YN + "N";
+                    YN += "N";
                     //System.out.println("Буква [" + i + "] = " + TxtN2.charAt(i) + " - N");
                 }
             }
