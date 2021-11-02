@@ -94,9 +94,3 @@ public class Library {
 
     }
 }
-
-//int countbook=0;
-//for (Book bookslist: books) {
-//    countbook++;
-//    System.out.println(countbook+") " + bookslist.BookInfo());
-//}
