@@ -77,19 +77,35 @@ public class Reader {
 
 
 
-    public void StudentReturnBooks(String booksname) {
+    //public void StudentReturnBooks(String booksname) {
+    //    int YN = 0;
+    //    for (int i = 1; i <= this.bookscountadd; i++) {
+    //        if (booksadd[i].equals(booksname)) {
+    //            YN++;
+    //            bookscountreturn++;
+    //            booksreturn[bookscountreturn] = booksname;
+    //            System.out.println(StudentInfo() + "\n здав книгу -> " + booksname);
+    //            break;
+    //        }
+    //    }
+    //    if (YN < 1) {
+    //        System.out.println(StudentInfo() + "\n Не має такої книги з бібліотеки -> " + booksname);
+    //    }
+    //}
+
+    public void returnBook(Book books) {
         int YN = 0;
         for (int i = 1; i <= this.bookscountadd; i++) {
-            if (booksadd[i].equals(booksname)) {
+            if (booksadd[i].equals(books.BookInfo())) {
                 YN++;
                 bookscountreturn++;
-                booksreturn[bookscountreturn] = booksname;
-                System.out.println(StudentInfo() + "\n здав книгу -> " + booksname);
+                booksreturn[bookscountreturn] = books.BookInfo();
+                System.out.println(StudentInfo() + "\n здав книгу -> " + books.BookInfo());
                 break;
             }
         }
         if (YN < 1) {
-            System.out.println(StudentInfo() + "\n Не має такої книги з бібліотеки -> " + booksname);
+            System.out.println(StudentInfo() + "\n Не має такої книги з бібліотеки -> " + books.BookInfo());
         }
     }
 
