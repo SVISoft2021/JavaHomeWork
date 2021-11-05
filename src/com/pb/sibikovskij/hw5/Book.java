@@ -18,10 +18,9 @@ public class Book {
         return BookCount;
     }
 
-    String BookInfo() {
+    public String BookInfo() {
         return autorbook + " \"" + namebook + "\" (" + yearbook + ")";
     }
-
 
     public String getNamebook() {
         return namebook;
