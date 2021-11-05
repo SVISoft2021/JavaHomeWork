@@ -53,9 +53,9 @@ public class Library {
         //students[2].StudentAddBooks(books[3].BookInfo());
         students[2].takeBook(books[3]);
         //students[3].StudentAddBooks(books[4].BookInfo());
-        students[3].takeBook(books[4]);
+        students[3].takeBook(books[1]);
         //students[3].StudentAddBooks(books[2].BookInfo());
-        students[3].takeBook(books[2]);
+        students[3].takeBook(books[0]);
 
 
         System.out.println("");
@@ -78,10 +78,14 @@ public class Library {
 
         System.out.println("");
         //====ПОВЕРНЕННЯ КНИГ==================================================
-        students[0].StudentReturnBooks(books[1].BookInfo());
-        students[0].StudentReturnBooks(books[5].BookInfo());
-        students[1].StudentReturnBooks(books[2].BookInfo());
-        students[3].StudentReturnBooks(books[2].BookInfo());
+        //students[0].StudentReturnBooks(books[1].BookInfo());
+        students[0].returnBook(books[1]);
+        //students[0].StudentReturnBooks(books[5].BookInfo());
+        students[0].returnBook(books[4]);
+        //students[1].StudentReturnBooks(books[2].BookInfo());
+        students[1].returnBook(books[2]);
+        //students[3].StudentReturnBooks(books[2].BookInfo());
+        students[3].returnBook(books[0]);
 
         System.out.println("");
         //====ЗДАНІ КНИГИ==================================================
