@@ -44,19 +44,27 @@ public class Library {
 
         System.out.println("");
         //====ПОЛУЧЕНИЕ КНИГ==================================================
-        students[0].StudentAddBooks(books[1].BookInfo());
-        students[0].StudentAddBooks(books[4].BookInfo());
-        students[1].StudentAddBooks(books[5].BookInfo());
-        students[2].StudentAddBooks(books[3].BookInfo());
-        students[3].StudentAddBooks(books[4].BookInfo());
-        students[3].StudentAddBooks(books[2].BookInfo());
+        //students[0].StudentAddBooks(books[1].BookInfo());
+        students[0].takeBook(books[2]);
+        //students[0].StudentAddBooks(books[4].BookInfo());
+        students[0].takeBook(books[4]);
+        //students[1].StudentAddBooks(books[5].BookInfo());
+        students[1].takeBook(books[5]);
+        //students[2].StudentAddBooks(books[3].BookInfo());
+        students[2].takeBook(books[3]);
+        //students[3].StudentAddBooks(books[4].BookInfo());
+        students[3].takeBook(books[4]);
+        //students[3].StudentAddBooks(books[2].BookInfo());
+        students[3].takeBook(books[2]);
+
 
         System.out.println("");
         //====КНИГИ НА РУКАХ==================================================
         System.out.println("Книги на руках:");
         for (int i = 1; i <= Reader.getStudentCount(); i++) {
             if (students[i-1].takeBook()>0)
-            System.out.println(students[i-1].takeBook()+" -> "+students[i-1].StudentInfo());
+            //System.out.println(students[i-1].takeBook()+" -> "+students[i-1].StudentInfo());
+            students[i-1].takeBook(students[i-1].takeBook());
         }
 
         System.out.println("");
@@ -64,7 +72,8 @@ public class Library {
         System.out.println("Книги на руках (список):");
         for (int i = 1; i <= Reader.getStudentCount(); i++) {
             if (students[i-1].takeBook()>0)
-             System.out.println(students[i-1].StudentInfo() + ":\n" + students[i-1].takeBookList());
+             //System.out.println(students[i-1].StudentInfo() + ":\n" + students[i-1].takeBookList());
+             students[i-1].takeBook(students[i-1].takeBookList());
         }
 
         System.out.println("");
@@ -74,13 +83,13 @@ public class Library {
         students[1].StudentReturnBooks(books[2].BookInfo());
         students[3].StudentReturnBooks(books[2].BookInfo());
 
-
         System.out.println("");
         //====ЗДАНІ КНИГИ==================================================
         System.out.println("Прочитані книги:");
         for (int i = 1; i <= Reader.getStudentCount(); i++) {
             if (students[i-1].returnBook()>0)
-                System.out.println(students[i-1].returnBook()+" -> "+students[i-1].StudentInfo());
+                //System.out.println(students[i-1].returnBook()+" -> "+students[i-1].StudentInfo());
+                students[i-1].returnBook(students[i-1].returnBook());
         }
 
         System.out.println("");
@@ -88,9 +97,9 @@ public class Library {
         System.out.println("Прочитані книги (список):");
         for (int i = 1; i <= Reader.getStudentCount(); i++) {
             if (students[i-1].returnBook()>0)
-                System.out.println(students[i-1].StudentInfo() + ":\n" + students[i-1].returnBookList());
+                //System.out.println(students[i-1].StudentInfo() + ":\n" + students[i-1].returnBookList());
+                students[i-1].returnBook(students[i-1].returnBookList());
         }
-
 
     }
 }
