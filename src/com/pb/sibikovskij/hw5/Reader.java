@@ -27,10 +27,16 @@ public class Reader {
         StudentCount++;
     }
 
-    public void StudentAddBooks(String booksname) {
+    //public void StudentAddBooks(String booksname) {
+    //    bookscountadd++;
+    //    booksadd[bookscountadd] = booksname;
+    //    System.out.println(StudentInfo() + "\n взяв з бібліотеки книгу -> " + booksname);
+    //}
+
+    public void takeBook(Book books) {
         bookscountadd++;
-        booksadd[bookscountadd] = booksname;
-        System.out.println(StudentInfo() + "\n взяв з бібліотеки книгу -> " + booksname);
+        booksadd[bookscountadd] = books.BookInfo();;
+        System.out.println(StudentInfo() + "\n взяв з бібліотеки книгу -> " + books.BookInfo());
     }
 
     public static int getStudentCount() {
@@ -53,6 +59,14 @@ public class Reader {
         return bookscountadd;
         }
 
+    public void takeBook(int bookCount) {
+        System.out.println(bookCount + " -> "+ StudentInfo());
+    }
+
+    public void takeBook(String bookNames) {
+        System.out.println(StudentInfo()+":\n"+ bookNames);
+    }
+
     public String takeBookList(){
         String ListBook="";
         for (int i = 1; i <= this.bookscountadd; i++) {
@@ -60,6 +74,8 @@ public class Reader {
         }
         return ListBook;
     }
+
+
 
     public void StudentReturnBooks(String booksname) {
         int YN = 0;
@@ -79,6 +95,14 @@ public class Reader {
 
     public int returnBook(){
        return bookscountreturn;
+    }
+
+    public void returnBook(int bookCount) {
+        System.out.println(bookCount + " -> "+ StudentInfo());
+    }
+
+    public void returnBook(String bookNames) {
+        System.out.println(StudentInfo()+":\n"+ bookNames);
     }
 
     public String returnBookList(){
