@@ -45,5 +45,4 @@ public class Book {
     public void setYearbook(int yearbook) {
         this.yearbook = yearbook;
     }
-
 }
