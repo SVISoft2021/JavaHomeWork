@@ -1,24 +1,14 @@
 package com.pb.sibikovskij.hw6;
 
-public class Veterinarian extends Animal {
-    public Veterinarian(String name, String poroda, String color, int age, String food, String location) {
-        super(name, poroda, color, age, food, location);
+public class Veterinarian {
+    private String name;
+
+    public Veterinarian(String name) {
+        this.name = name;
     }
-
-    public void treatAnimal(Animal Animals) {
-       System.out.println(Animals.AnimalInfo()+":\n- сьогодні їв: " + Animals.food +"\n- сьогодні гуляв: "+Animals.location);
-       //System.out.println("!@!@!@");
-   }
-
-    public void treatAnimalAll(Animal... animals) {
-        for (Animal AnimalAll : animals) {
-            System.out.println(AnimalAll.AnimalInfo() + ":\n- сьогодні їв: " + AnimalAll.food + "\n- сьогодні гуляв: " + AnimalAll.location);
-        }
-    }
-
-    public void treatAnimalOne(Animal animalss) {
-        System.out.println(animalss.name);
-
+    public void treatAnimal(Animal animal) {
+        System.out.println("Ветеринар " + name + " оглядає сьогодні " + animal.AnimalInfo() +
+                " | " + animal.getName() + " гуляв - " + animal.getLocation() + ", їв - " + animal.getFood());
     }
 
 
