@@ -3,51 +3,65 @@ package com.pb.sibikovskij.hw6;
 import java.util.Objects;
 
 public class Dog extends Animal {
-    public Dog(String name, String poroda, String color, int age, String food, String location) {
-        super(name, poroda, color, age, food, location);
-    }
+    private String namesAn;
+    private String poroda;
+    private String color;
+    private int age;
 
-    @Override
-    public void eat(String food) {
-        super.eat(food);
-        System.out.println("... точніше не просто їсть, а прям жере її");
+    public Dog(String names, String namesAn, String poroda, String color, int age, String foods, String locations) {
+        super(names, foods, locations);
+        this.namesAn = namesAn;
+        this.poroda = poroda;
+        this.color = color;
+        this.age = age;
     }
 
     @Override
     public String AnimalInfo() {
-        return super.AnimalInfo();
+        return super.AnimalInfo()+ " " + namesAn + " (" + poroda + " | " + color + ") ["+age+" роки]";
     }
 
     @Override
-    public boolean equals(Object Animal_2) {
-        if (this == Animal_2)
-            return true;
-        if (Animal_2 == null || getClass() != Animal_2.getClass())
-            return false;
-        Animal animals = (Animal) Animal_2;
-        return name == animals.name && Objects.equals(poroda, animals.poroda);
+    public String AnimalInfoAll(String AnimalInf) {
+        AnimalInf = namesAn + " (" + poroda + " | " + color + ") ["+age+" роки]";
+        return super.AnimalInfoAll(AnimalInf);
+    }
+
+    @Override
+    public void makeNoise(String AnimalInf, String locationInf) {
+        AnimalInf = namesAn + " (" + poroda + " | " + color + ") ["+age+" роки]";
+        super.makeNoise(AnimalInf, locationInf);
+    }
+
+    @Override
+    public void eat(String AnimalInf, String eatInf)  {
+        AnimalInf = namesAn + " (" + poroda + " | " + color + ") ["+age+" роки]";
+        super.eat(AnimalInf, eatInf);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Dog dog = (Dog) o;
+        return age == dog.age && Objects.equals(namesAn, dog.namesAn) && Objects.equals(poroda, dog.poroda) && Objects.equals(color, dog.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, poroda, age, color);
+        return Objects.hash(namesAn, poroda, color, age);
     }
 
     @Override
     public String toString() {
-        return "Собака:\n- ім'я: " + name +
-                "\n- порода: " + poroda +
-                "\n- колір: " + color +
-                "\n- вік: " + age;
-    }
-
-    public String AnimalInfo(Dog Dog2) {
-        return Dog2.name + " (" + Dog2.poroda + " | " + Dog2.color + ") ["+Dog2.age+" роки]";
-    }
-
-    public void Dogequals(Dog Dog2) {
-        System.out.println("Порівняємо:\n 1) " + AnimalInfo() +
-                "\n 2) "+ AnimalInfo(Dog2)  + "\n Результат - " + equals(Dog2));
+        return "Собака {" +
+                "кличка ='" + namesAn + '\'' +
+                ", порода = '" + poroda + '\'' +
+                ", колір = '" + color + '\'' +
+                ", вік (років) = " + age + '\'' +
+                ", їв = '" + food + '\'' +
+                ", гуляв = '" + location + '\'' +
+                '}';
     }
 
 
